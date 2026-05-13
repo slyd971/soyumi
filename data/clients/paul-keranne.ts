@@ -337,7 +337,7 @@ const paulKerannePressKit: PressKitConfig = {
       },
       {
         label: "WhatsApp",
-        value: "+33 6 99 50 92 39",
+        value: "Téléphone",
         href: "https://wa.me/33699509239",
         icon: "whatsapp",
         external: true,
