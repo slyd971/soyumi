@@ -460,7 +460,7 @@ export const paulKeranneClient: ClientConfig = {
     ],
     ogImage: "/opengraph-image",
   },
-  defaultTheme: "yellow",
+  defaultTheme: "orange",
   defaultVariant: "impact",
   pressKit: paulKerannePressKit,
 };
