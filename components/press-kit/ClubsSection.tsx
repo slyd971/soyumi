@@ -1,7 +1,35 @@
 "use client";
 
+import Image from "next/image";
 import { Globe2, MapPin } from "lucide-react";
 import type { PressKitConfig } from "@/data/config";
+
+const flagOverrides: Record<string, { src: string; alt: string }> = {
+  "🇬🇵": {
+    src: "/soyumi/drapeau/drapeau-guadeloupe-independantiste-.webp",
+    alt: "Drapeau Guadeloupe",
+  },
+};
+
+function ClubItem({ item }: { item: string }) {
+  for (const [emoji, flag] of Object.entries(flagOverrides)) {
+    if (item.startsWith(emoji)) {
+      return (
+        <span className="inline-flex items-center gap-1.5">
+          <Image
+            src={flag.src}
+            alt={flag.alt}
+            width={20}
+            height={14}
+            className="inline-block shrink-0 rounded-[2px] object-cover"
+          />
+          {item.slice(emoji.length)}
+        </span>
+      );
+    }
+  }
+  return <>{item}</>;
+}
 
 type ClubsSectionProps = {
   clubs: PressKitConfig["clubs"];
@@ -48,7 +76,7 @@ export function ClubsSection({ clubs }: ClubsSectionProps) {
                       key={item}
                       className="rounded-lg border border-white/10 p-2.5 md:p-3"
                     >
-                      {item}
+                      <ClubItem item={item} />
                     </div>
                   ))}
                 </div>
