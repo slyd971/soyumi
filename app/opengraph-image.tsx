@@ -1,9 +1,8 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { notFound } from "next/navigation";
 import { ImageResponse } from "next/og";
 import { resolveRequestClient } from "@/lib/clients/server";
 import { templateThemes } from "@/data/templates";
+import { getCanonicalUrl } from "@/lib/domains";
 
 export const runtime = "nodejs";
 export const contentType = "image/png";
@@ -14,21 +13,6 @@ export const size = {
 
 export const alt = "Press kit preview";
 
-async function getHeroDataUrl(heroImage: string) {
-  const heroPath = path.join(process.cwd(), "public", heroImage.replace(/^\//, ""));
-  const heroBuffer = await readFile(heroPath);
-  const heroBase64 = heroBuffer.toString("base64");
-  const extension = path.extname(heroPath).toLowerCase();
-  const mimeType =
-    extension === ".png"
-      ? "image/png"
-      : extension === ".webp"
-        ? "image/webp"
-        : "image/jpeg";
-
-  return `data:${mimeType};base64,${heroBase64}`;
-}
-
 export default async function OpenGraphImage() {
   const client = await resolveRequestClient();
 
@@ -36,7 +20,7 @@ export default async function OpenGraphImage() {
     notFound();
   }
 
-  const heroDataUrl = await getHeroDataUrl(client.heroImage);
+  const heroUrl = new URL(client.heroImage, getCanonicalUrl(client)).toString();
   const theme = templateThemes[client.defaultTheme];
   const primaryCta = client.pressKit.navigation.cta.label;
 
@@ -77,7 +61,7 @@ export default async function OpenGraphImage() {
           }}
         >
           <img
-            src={heroDataUrl}
+            src={heroUrl}
             alt="DJ SLY'D hero"
             style={{
               width: "100%",
