@@ -162,6 +162,12 @@ function getHeroStatCardClass(value: string) {
     : "rounded-[1.15rem] border border-white/8 bg-white/[0.035] p-3 shadow-[0_12px_28px_rgba(0,0,0,0.22)] backdrop-blur-sm transition duration-300 hover:border-white/16 hover:bg-white/[0.05] md:min-h-[7.2rem] md:rounded-[1.45rem] md:px-4 md:py-3.5";
 }
 
+function getHeroAccentSizeClass(accent: string) {
+  const len = accent.trim().length;
+  if (len >= 16) return "text-[1.4rem] sm:text-[1.8rem] md:text-[2.6rem] xl:text-[3.4rem]";
+  return "";
+}
+
 function getHeroStatLabelClass(label: string) {
   const isLongLabel = label.trim().length >= 16;
 
@@ -442,7 +448,7 @@ export function HeroSection({
               className="max-w-4xl text-[2.55rem] font-black uppercase leading-[0.9] tracking-[-0.03em] sm:text-5xl md:text-7xl xl:text-[6.9rem]"
             >
               {hero.title}
-              <span className="block text-[var(--pk-accent)]">{hero.accent}</span>
+              <span className={`block text-[var(--pk-accent)] ${getHeroAccentSizeClass(hero.accent)}`}>{hero.accent}</span>
             </motion.h1>
 
             <motion.p
@@ -510,14 +516,20 @@ export function HeroSection({
               <div className="absolute inset-0 rounded-[1.45rem] bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_10%,rgba(0,0,0,0.18)_54%,rgba(0,0,0,0.58)_100%)] md:rounded-[1.9rem]" />
               <div className="absolute inset-0 rounded-[1.45rem] ring-1 ring-[rgb(var(--pk-accent-rgb)/0.08)] md:rounded-[1.9rem]" />
 
-              <div className="absolute inset-x-4 bottom-4 rounded-[1rem] border border-white/10 bg-black/38 p-4 backdrop-blur-md md:inset-x-6 md:bottom-6 md:rounded-[1.3rem] md:p-4.5">
-                <div className="text-[9px] uppercase tracking-[0.24em] text-[var(--pk-accent-soft)] md:text-[10px] md:tracking-[0.3em]">
-                  {hero.image.badge}
+              {(hero.image.badge || hero.image.caption) && (
+                <div className="absolute inset-x-4 bottom-4 rounded-[1rem] border border-white/10 bg-black/38 p-4 backdrop-blur-md md:inset-x-6 md:bottom-6 md:rounded-[1.3rem] md:p-4.5">
+                  {hero.image.badge && (
+                    <div className="text-[9px] uppercase tracking-[0.24em] text-[var(--pk-accent-soft)] md:text-[10px] md:tracking-[0.3em]">
+                      {hero.image.badge}
+                    </div>
+                  )}
+                  {hero.image.caption && (
+                    <div className="mt-1.5 text-[1.15rem] font-black uppercase leading-[0.95] text-white md:text-[1.85rem]">
+                      {hero.image.caption}
+                    </div>
+                  )}
                 </div>
-                <div className="mt-1.5 text-[1.15rem] font-black uppercase leading-[0.95] text-white md:text-[1.85rem]">
-                  {hero.image.caption}
-                </div>
-              </div>
+              )}
             </div>
           </motion.div>
         </div>
