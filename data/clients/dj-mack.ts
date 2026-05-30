@@ -464,13 +464,13 @@ const mackPressKitFr: PressKitConfig = {
     eyebrow: "Bio",
     title: "Une référence Afro-Caribéenne,\nun MC hors norme.",
     signatureQuote:
-      "DJ MACK ne se contente pas de mixer: il retourne la scène.",
+      "Aux platines comme au micro, DJ MACK transforme chaque scène en célébration.",
     supportingText:
       "DJ & MC international basé à Paris, porté par une double identité congolaise et guadeloupéenne.",
     paragraphs: [
       "Figure incontournable de la scène Afro-Caribéenne en Europe, DJ MACK, de son vrai nom Stéphane, puise sa force dans une double identité culturelle puissante: congolaise et guadeloupéenne. Représentant fièrement la France à l'international, il se distingue par sa capacité rare à maîtriser et sublimer deux univers distincts avec la même virtuosité: les sonorités pointues de l'Afro, de l'Amapiano à l'Afrobeats, et l'énergie pure des musiques caribéennes, de la Soca au Bouyon, du son d'Ennery au JabJab et au Dancehall.",
       "Véritable couteau suisse de l'ambiance, il est aussi redoutable aux platines qu'au micro. MC hors norme doté d'une énergie contagieuse que les promoteurs s'arrachent, il possède ce don unique de fédérer les foules massives tout en conservant une atmosphère intensément conviviale. C'est cette dimension d'entertainer complet qui a fait de lui le Host officiel du mythique festival Karukera One Love.",
-      "DJ officiel du French Soca Crew, institution célébrant ses 15 ans d'impact, et cofondateur du mouvement We Are Soca, DJ MACK ne se contente pas de mixer: il retourne la scène.",
+      "DJ officiel du French Soca Crew, institution célébrant ses 15 ans d'impact, et cofondateur du mouvement We Are Soca, DJ MACK impose une présence qui fait basculer la scène.",
     ],
   },
   clubs: {
