@@ -39,5 +39,7 @@ export function getPrimaryHostname(client: ClientConfig) {
 
 export function getCanonicalUrl(client: ClientConfig, path = "/") {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  return new URL(normalizedPath, `https://${getPrimaryHostname(client)}`).toString();
+  const canonicalBase = client.seo.canonical ?? `https://${getPrimaryHostname(client)}`;
+
+  return new URL(normalizedPath, canonicalBase).toString();
 }

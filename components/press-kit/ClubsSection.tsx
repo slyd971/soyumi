@@ -4,15 +4,14 @@ import Image from "next/image";
 import { Globe2, MapPin } from "lucide-react";
 import type { PressKitConfig } from "@/data/config";
 
-const flagOverrides: Record<string, { src: string; alt: string }> = {
-  "🇬🇵": {
-    src: "/soyumi/drapeau/drapeau-guadeloupe-independantiste-.webp",
-    alt: "Drapeau Guadeloupe",
-  },
-};
-
-function ClubItem({ item }: { item: string }) {
-  for (const [emoji, flag] of Object.entries(flagOverrides)) {
+function ClubItem({
+  item,
+  iconOverrides,
+}: {
+  item: string;
+  iconOverrides?: PressKitConfig["clubs"]["itemIconOverrides"];
+}) {
+  for (const [emoji, flag] of Object.entries(iconOverrides ?? {})) {
     if (item.startsWith(emoji)) {
       return (
         <span className="inline-flex items-center gap-1.5">
@@ -76,7 +75,10 @@ export function ClubsSection({ clubs }: ClubsSectionProps) {
                       key={item}
                       className="rounded-lg border border-white/10 p-2.5 md:p-3"
                     >
-                      <ClubItem item={item} />
+                      <ClubItem
+                        item={item}
+                        iconOverrides={clubs.itemIconOverrides}
+                      />
                     </div>
                   ))}
                 </div>

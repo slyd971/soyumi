@@ -139,7 +139,7 @@ const soyumiPressKit: PressKitConfig = {
     eyebrow: "About",
     title: "Afro-Caribbean roots,\nglobal open-format energy.",
     signatureLabel: "Signature",
-    signatureQuote: "I don't just play music. I create energy.",
+    signatureQuote: "I shape the room from the first track.",
     supportingText:
       "Soyumi builds connection, emotion and momentum on the dancefloor.",
     tags: [
@@ -153,10 +153,10 @@ const soyumiPressKit: PressKitConfig = {
       "Open Format",
     ],
     paragraphs: [
-      "Soyumi is an international DJ blending Afro-Caribbean roots, global sounds and contemporary club aesthetics to create vibrant, high-energy experiences for diverse audiences.",
+      "Soyumi is an international DJ with Afro-Caribbean roots, shaped by global sounds and contemporary club culture.",
       "Originally from Paris and shaped by her journey across Australia, the Caribbean, Europe and Asia, she brings a unique multicultural identity to every performance.",
       "Her sound moves naturally between Afrobeats, Dancehall, Hip-Hop, House and commercial hits, allowing her to adapt to any crowd and atmosphere.",
-      "Known for her strong crowd-reading skills and natural stage presence, Soyumi does not simply play music: she builds connection, emotion and energy in the moment.",
+      "Known for her crowd-reading skills and natural stage presence, Soyumi builds connection in real time, from the first warm-up track to peak-hour moments.",
     ],
   },
   clubs: {
@@ -164,6 +164,12 @@ const soyumiPressKit: PressKitConfig = {
     title: "From Sydney to Paris,\nenergy made for every stage.",
     description:
       "Soyumi has performed across clubs, hotels, festivals and private events, with a versatile approach that moves from warm lounge atmospheres to peak-time club energy.",
+    itemIconOverrides: {
+      "🇬🇵": {
+        src: "/soyumi/drapeau/drapeau-guadeloupe-independantiste-.webp",
+        alt: "Drapeau Guadeloupe",
+      },
+    },
     regions: [
       {
         title: "Paris",
@@ -222,28 +228,28 @@ const soyumiPressKit: PressKitConfig = {
       {
         id: "soyumi-video-1",
         title: "Live clip 01",
-        description: "",
+        description: "A live clip focused on crowd movement and stage presence.",
         src: "/soyumi/videos/video-soyumi-1.mp4",
         poster: "/soyumi/videos/video-soyumi-1-poster.png",
       },
       {
         id: "soyumi-video-2",
         title: "Live clip 02",
-        description: "",
+        description: "A short club moment showing Soyumi behind the decks.",
         src: "/soyumi/videos/video-soyumi-2.mp4",
         poster: "/soyumi/videos/video-soyumi-2-poster.png",
       },
       {
         id: "soyumi-video-3",
         title: "Live clip 03",
-        description: "",
+        description: "An excerpt built around rhythm, transitions and room energy.",
         src: "/soyumi/videos/video-soyumi-3.mp4",
         poster: "/soyumi/videos/video-soyumi-3-poster.png",
       },
       {
         id: "soyumi-video-4",
         title: "Live clip 04",
-        description: "",
+        description: "A final live glimpse into Soyumi's open-format universe.",
         src: "/soyumi/videos/video-soyumi-4.mp4",
         poster: "/soyumi/videos/video-soyumi-4-poster.png",
       },
@@ -252,7 +258,7 @@ const soyumiPressKit: PressKitConfig = {
   spotify: {
     eyebrow: "Spotify",
     title: "Soyumi playlists",
-    description: "",
+    description: "A direct entry point into Soyumi's current listening world.",
     playlists: [],
     badgeLabel: "Soyumi playlists",
   },
@@ -415,6 +421,7 @@ export const soyumiClient: ClientConfig = {
       "international DJ",
     ],
     ogImage: "/opengraph-image",
+    canonical: "https://soyumi.presskit.fr/",
   },
   defaultTheme: "labringue",
   defaultVariant: "impact",

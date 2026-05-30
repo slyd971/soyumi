@@ -174,7 +174,7 @@ export function Footer({
             rel="noreferrer"
             className="mt-2 inline-flex text-[10px] uppercase tracking-[0.18em] text-white/30 transition hover:text-white/60"
           >
-            Powered by presskit.fr
+            Powered by Presskit.Fr
           </a>
         </div>
       </div>

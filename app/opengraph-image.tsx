@@ -62,7 +62,7 @@ export default async function OpenGraphImage() {
         >
           <img
             src={heroUrl}
-            alt="DJ SLY'D hero"
+            alt={`${client.name} hero`}
             style={{
               width: "100%",
               height: "100%",

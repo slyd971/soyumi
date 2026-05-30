@@ -184,7 +184,7 @@ const mackPressKitEn: PressKitConfig = {
     title: "Afro-Caribbean force,\nMC energy, global crowd instinct.",
     signatureLabel: "Signature",
     signatureQuote:
-      "DJ MACK does not just play music. He commands the room.",
+      "DJ MACK brings the decks and the microphone into the same live momentum.",
     supportingText:
       "A Paris-based international DJ & MC shaped by Congolese and Guadeloupean heritage.",
     tags: [
@@ -200,7 +200,7 @@ const mackPressKitEn: PressKitConfig = {
     paragraphs: [
       "DJ MACK is a leading force in Europe's Afro-Caribbean scene. Born Stephane, he draws his unique energy from a rich dual heritage: Congolese and Guadeloupean.",
       "Proudly representing France on the global stage, he bridges two distinct musical worlds, delivering sets that highlight the hypnotic grooves of Afro music and the high-energy pulse of the Caribbean.",
-      "A true Swiss army knife of live entertainment, he is as lethal on the turntables as he is on the microphone. His magnetic energy and exceptional MC skills have made him a highly sought-after talent by promoters worldwide.",
+      "Equally confident on the decks and on the microphone, he brings the timing of a DJ and the instinct of a live host. That combination has made him a trusted name for promoters looking for both music and crowd direction.",
       "His unmatched crowd intuition led him to become the official host of the legendary Karukera One Love festival. As the official DJ of the pioneering French Soca Crew and co-founder of the We Are Soca movement, DJ MACK brings culture, rhythm and command to every stage.",
     ],
   },
@@ -281,7 +281,7 @@ const mackPressKitEn: PressKitConfig = {
       {
         id: "dj-mack-video-3",
         title: "Live clip 03",
-        description: "",
+        description: "A final live extract focused on movement, crowd response and MC presence.",
         src: "/mack/videos/video-3.mp4",
       },
     ],
@@ -289,7 +289,7 @@ const mackPressKitEn: PressKitConfig = {
   spotify: {
     eyebrow: "Spotify",
     title: "DJ MACK playlists",
-    description: "",
+    description: "A selected listening point for DJ MACK's Afro-Caribbean universe.",
     playlists: [],
     badgeLabel: "DJ MACK playlists",
   },
@@ -297,9 +297,9 @@ const mackPressKitEn: PressKitConfig = {
     eyebrow: "",
     title: "Flyers as proof,\nscenes as receipts.",
     intro:
-      "A blog-style wall of event flyers showing the movement behind the name: carnivals, Soca parties, club nights and cultural moments carried by DJ MACK's Afro-Caribbean identity.",
+      "A wall of flyers showing the events behind the name: carnivals, Soca parties, club nights and cultural moments carried by DJ MACK's Afro-Caribbean identity.",
     supportingText:
-      "Each visual works as proof of field presence: active communities, recurring formats and promoters who trust him to host, energize and connect the room.",
+      "Each visual documents a real presence on the ground: active communities, recurring formats and promoters who trust him to guide the room.",
     categories: [],
     itemLabel: "",
     hideItemText: true,
@@ -468,9 +468,10 @@ const mackPressKitFr: PressKitConfig = {
     supportingText:
       "DJ & MC international basé à Paris, porté par une double identité congolaise et guadeloupéenne.",
     paragraphs: [
-      "Figure incontournable de la scène Afro-Caribéenne en Europe, DJ MACK, de son vrai nom Stéphane, puise sa force dans une double identité culturelle puissante: congolaise et guadeloupéenne. Représentant fièrement la France à l'international, il se distingue par sa capacité rare à maîtriser et sublimer deux univers distincts avec la même virtuosité: les sonorités pointues de l'Afro, de l'Amapiano à l'Afrobeats, et l'énergie pure des musiques caribéennes, de la Soca au Bouyon, du son d'Ennery au JabJab et au Dancehall.",
-      "Véritable couteau suisse de l'ambiance, il est aussi redoutable aux platines qu'au micro. MC hors norme doté d'une énergie contagieuse que les promoteurs s'arrachent, il possède ce don unique de fédérer les foules massives tout en conservant une atmosphère intensément conviviale. C'est cette dimension d'entertainer complet qui a fait de lui le Host officiel du mythique festival Karukera One Love.",
-      "DJ officiel du French Soca Crew, institution célébrant ses 15 ans d'impact, et cofondateur du mouvement We Are Soca, DJ MACK impose une présence qui fait basculer la scène.",
+      "Figure incontournable de la scène Afro-Caribéenne en Europe, DJ MACK, de son vrai nom Stéphane, puise sa force dans une double culture congolaise et guadeloupéenne.",
+      "Il représente la France à l'international avec une maîtrise rare de deux univers: les sonorités Afro, de l'Amapiano à l'Afrobeats, et les musiques caribéennes, de la Soca au Bouyon, du son d'Ennery au JabJab et au Dancehall.",
+      "Aux platines comme au micro, il sait tenir une foule nombreuse sans perdre la proximité avec le public. Cette présence complète a fait de lui le host officiel du festival Karukera One Love.",
+      "DJ officiel du French Soca Crew, institution qui célèbre 15 ans d'impact, et cofondateur du mouvement We Are Soca, DJ MACK porte une scène qu'il connaît de l'intérieur.",
     ],
   },
   clubs: {
@@ -478,7 +479,7 @@ const mackPressKitFr: PressKitConfig = {
     eyebrow: "Références",
     title: "Tournée Internationale\n& Carnavals Majeurs.",
     description:
-      "L'énergie contagieuse de DJ MACK l'a mené aux quatre coins du globe, enflammant les scènes des carnavals les plus prestigieux et des destinations internationales très prisées.",
+      "L'énergie de DJ MACK l'a mené sur des scènes majeures, des grands carnavals aux destinations Soca les plus suivies.",
     regions: [
       {
         title: "Carnavals Majeurs",
@@ -537,7 +538,7 @@ const mackPressKitFr: PressKitConfig = {
       "Ils montrent une présence régulière sur le terrain, auprès de publics fidèles et de promoteurs qui lui font confiance pour porter l'énergie de leurs événements.",
     fit: {
       eyebrow: "Pourquoi ça compte",
-      title: "Pensé pour les événements\nqui ont besoin d'impact.",
+      title: "Pour les événements\nqui doivent marquer les esprits.",
       points: [
         "Un profil DJ & MC capable d'animer, de guider les temps forts et de tenir le fil de l'événement.",
         "Une identité Afro-Caribéenne forte entre Soca, Bouyon, Dancehall, Amapiano et Afrobeats.",
@@ -566,7 +567,7 @@ const mackPressKitFr: PressKitConfig = {
       {
         id: "dj-mack-video-3",
         title: "Extrait live 03",
-        description: "",
+        description: "Un troisième extrait pour voir DJ MACK tenir le lien entre scène, micro et public.",
         src: "/mack/videos/video-3.mp4",
       },
     ],
@@ -605,10 +606,11 @@ const mackPressKitFr: PressKitConfig = {
   },
   gallery: {
     ...mackPressKitEn.gallery,
-    title: "Galerie",
+    eyebrow: "Galerie",
+    title: "En images",
     description:
       "Sélection de visuels presse et live de DJ MACK, centrée sur la performance, la présence scénique et l'énergie Afro-Caribéenne.",
-    homepageTitle: "Présence visuelle",
+    homepageTitle: "En images",
     homepageCtaLabel: "Ouvrir la galerie",
   },
   footer: {
@@ -678,10 +680,12 @@ export const djMackEnClient: ClientConfig = {
       "DJ Paris",
     ],
     ogImage: heroImage,
+    canonical: "https://dj-mack.presskit.fr/",
   },
   defaultTheme: "violet",
   defaultVariant: "impact",
   pressKit: mackPressKitEn,
+  hideFromSwitcher: true,
   languageSwitch: [
     { label: "FR", href: "/", clientSlug: "dj-mack" },
     { label: "EN", href: "/en", active: true },
@@ -693,6 +697,7 @@ export const djMackClient: ClientConfig = {
   slug: "dj-mack",
   domain: "dj-mack.presskit.fr",
   vercelSubdomain: "dj-mack.vercel.app",
+  hideFromSwitcher: false,
   tagline: "DJ & MC international - Afro-Caribéen - basé à Paris",
   category: "DJ & MC international / Soca / Afro-Caribéen",
   description: mackPressKitFr.metadata.description,
@@ -734,10 +739,4 @@ export const djMackClient: ClientConfig = {
     { label: "FR", href: "/", active: true },
     { label: "EN", href: "/en", clientSlug: "dj-mack-en" },
   ],
-};
-
-export const djMackFrClient: ClientConfig = {
-  ...djMackClient,
-  slug: "dj-mack-fr",
-  vercelSubdomain: "dj-mack-fr.vercel.app",
 };

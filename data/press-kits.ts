@@ -28,7 +28,17 @@ const pressKitEntries = new Map<ArtistId, PressKitEntry>(
 );
 
 export function getPressKitEntries(): PressKitEntry[] {
-  return [...pressKitEntries.values()];
+  return getClients()
+    .filter((client) => !client.hideFromSwitcher)
+    .map((client) => {
+      const entry = pressKitEntries.get(client.slug as ArtistId);
+
+      if (!entry) {
+        throw new Error(`Client "${client.slug}" is missing from press kit entries.`);
+      }
+
+      return entry;
+    });
 }
 
 const sectionHrefMap = {

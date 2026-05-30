@@ -140,7 +140,7 @@ const yoruboyPressKit: PressKitConfig = {
     signatureLabel: "Mission",
     signatureQuote: "Faire danser, connecter et inspirer à travers la musique.",
     supportingText:
-      "Un mélange de cultures et d'influences musicales qui crée une vraie signature.",
+      "Des influences afro, caribéennes et électroniques réunies dans un set direct, lisible et dansant.",
     tags: [
       "Open Format",
       "Hip-Hop",
@@ -153,17 +153,17 @@ const yoruboyPressKit: PressKitConfig = {
       "Dancehall",
     ],
     paragraphs: [
-      "Je suis Yoruboy DJ, un artiste passionné qui fusionne Afrobeat, Amapiano, Hip-Hop et House pour créer des sets énergiques, modernes et résolument dansants.",
-      "Nourri par un univers multiculturel, je mêle rythmes africains, sonorités caribéennes et textures électroniques afin d'offrir une expérience musicale immersive et fédératrice.",
-      "Actif derrière les platines depuis plusieurs années, j'ai développé une identité forte portée par une énergie solaire qui fait voyager le public.",
-      "Ambitieux et tourné vers l'avenir, je souhaite faire rayonner la culture afro sur les scènes nationales et internationales.",
+      "Yoruboy DJ construit ses sets autour de l'Afrobeat, de l'Amapiano, du Hip-Hop et de la House, avec une ligne claire: garder la piste en mouvement.",
+      "Son univers croise rythmes africains, couleurs caribéennes et textures électroniques, sans perdre le lien avec le public.",
+      "Derrière les platines, il avance avec une énergie solaire et une sélection pensée pour faire monter la salle morceau après morceau.",
+      "Son ambition est simple: porter la culture afro sur des scènes toujours plus larges, en France comme à l'international.",
     ],
   },
   clubs: {
     eyebrow: "Expérience",
     title: "Références et formats.",
     description:
-      "Une présence construite entre clubs parisiens, concepts culturels, brand events et événements privés.",
+      "Une présence construite entre clubs parisiens, concepts culturels, événements de marque et formats privés.",
     regions: [
       {
         title: "Références",
@@ -194,7 +194,7 @@ const yoruboyPressKit: PressKitConfig = {
       {
         title: "Formats",
         icon: "globe",
-        items: ["Clubs", "Brand events", "Événements privés", "Restaurants"],
+        items: ["Clubs", "Événements de marque", "Événements privés", "Restaurants"],
       },
     ],
   },
@@ -202,8 +202,8 @@ const yoruboyPressKit: PressKitConfig = {
     eyebrow: "Son",
     title: "À l'écoute.",
     paragraphs: [
-      "Je fusionne Afrobeat, Amapiano, Hip-Hop et House pour créer des sets énergiques et modernes.",
-      "Mon objectif est de faire voyager les gens dans mon univers musical avec une sélection fédératrice et dansante.",
+      "Afrobeat, Amapiano, Hip-Hop et House forment la base de ses sets.",
+      "La sélection reste accessible, rythmée et pensée pour faire circuler le public d'une couleur à l'autre.",
     ],
     cta: {
       label: "Écouter sur SoundCloud",
@@ -222,56 +222,56 @@ const yoruboyPressKit: PressKitConfig = {
       {
         id: "yoruboy-video-1",
         title: "Extrait live 01",
-        description: "",
+        description: "Un moment live centré sur la montée du public et la présence aux platines.",
         src: "/yoruboy/videos/video-1-web.mp4",
         poster: "/yoruboy/videos/video-1-poster.jpg",
       },
       {
         id: "yoruboy-video-2",
         title: "Extrait live 02",
-        description: "",
+        description: "Un extrait court pour capter l'énergie du set en situation.",
         src: "/yoruboy/videos/video-2-web.mp4",
         poster: "/yoruboy/videos/video-2-poster.jpg",
       },
       {
         id: "yoruboy-video-3",
         title: "Extrait live 03",
-        description: "",
+        description: "Séquence dancefloor autour des sonorités afro et amapiano.",
         src: "/yoruboy/videos/video-3-web.mp4",
         poster: "/yoruboy/videos/video-3-poster.jpg",
       },
       {
         id: "yoruboy-video-4",
         title: "Extrait live 04",
-        description: "",
+        description: "Yoruboy Dj en format club, au contact direct du public.",
         src: "/yoruboy/videos/video-4-web.mp4",
         poster: "/yoruboy/videos/video-4-poster.jpg",
       },
       {
         id: "yoruboy-video-5",
         title: "Extrait live 05",
-        description: "",
+        description: "Un passage live qui montre la dynamique du set.",
         src: "/yoruboy/videos/video-5-web.mp4",
         poster: "/yoruboy/videos/video-5-poster.jpg",
       },
       {
         id: "yoruboy-video-6",
         title: "Extrait live 06",
-        description: "",
+        description: "Extrait vertical pensé pour restituer l'ambiance de la salle.",
         src: "/yoruboy/videos/video-6-web.mp4",
         poster: "/yoruboy/videos/video-6-poster.jpg",
       },
       {
         id: "yoruboy-video-7",
         title: "Extrait live 07",
-        description: "",
+        description: "Un instant de performance entre sélection afro et énergie club.",
         src: "/yoruboy/videos/video-7-web.mp4",
         poster: "/yoruboy/videos/video-7-poster.jpg",
       },
       {
         id: "yoruboy-video-8",
         title: "Extrait live 08",
-        description: "",
+        description: "Dernier aperçu live de l'univers Yoruboy Dj.",
         src: "/yoruboy/videos/video-8-web.mp4",
         poster: "/yoruboy/videos/video-8-poster.jpg",
       },
@@ -302,7 +302,7 @@ const yoruboyPressKit: PressKitConfig = {
     eyebrow: "Contact",
     title: "Booking et demandes.",
     description:
-      "Pour toute demande de booking, événement privé, date en club ou collaboration.",
+      "Pour une date en club, un événement privé, une collaboration ou une demande professionnelle.",
     methods: [
       {
         label: "Email",
@@ -371,7 +371,7 @@ export const yoruboyDjClient: ClientConfig = {
   country: "France",
   category: "DJ afro / Amapiano / open format",
   description:
-    "DJ open format basé à Paris, entre Afro, Amapiano, Hip-Hop et House pour clubs, brand events et événements privés.",
+    "DJ open format basé à Paris, entre Afro, Amapiano, Hip-Hop et House pour clubs, événements de marque et formats privés.",
   longBio: yoruboyPressKit.about.paragraphs.join(" "),
   heroImage: "/yoruboy/hero.jpeg",
   gallery: yoruboyPressKit.gallery.images,
@@ -392,7 +392,7 @@ export const yoruboyDjClient: ClientConfig = {
         "Sets afro et open format pensés pour clubs, nightlife parisienne et dancefloors à forte énergie.",
     },
     {
-      title: "Brand events",
+      title: "Événements de marque",
       description:
         "Formats musicaux lifestyle pour activations de marque, concepts culturels et expériences premium.",
     },
@@ -433,6 +433,7 @@ export const yoruboyDjClient: ClientConfig = {
       "booking DJ Paris",
     ],
     ogImage: "/opengraph-image",
+    canonical: "https://yoruboy-dj.presskit.fr/",
   },
   defaultTheme: "orange",
   defaultVariant: "impact",

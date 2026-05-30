@@ -74,6 +74,7 @@ export const djslydClient: ClientConfig = {
       "event DJ France",
     ],
     ogImage: "/press-kit/og-share.jpg",
+    canonical: "https://djslyd.presskit.fr/",
   },
   defaultTheme: "red",
   defaultVariant: "impact",

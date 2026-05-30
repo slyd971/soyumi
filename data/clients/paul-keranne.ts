@@ -48,7 +48,7 @@ const paulKerannePressKit: PressKitConfig = {
       { label: "Spotify", href: "#spotify" },
     ],
     cta: {
-      label: "Book Paul-Keranne",
+      label: "Contacter Paul-Keranne",
       href: "#contact",
       variant: "primary",
     },
@@ -75,7 +75,7 @@ const paulKerannePressKit: PressKitConfig = {
         caption: "Afro-Amapiano from Paris",
       },
       ctas: [
-        { label: "Book Paul-Keranne", href: "#contact", variant: "primary" },
+        { label: "Contacter Paul-Keranne", href: "#contact", variant: "primary" },
         { label: "Voir vidéos", href: "#videos", variant: "secondary" },
       ],
       stats: [
@@ -100,7 +100,7 @@ const paulKerannePressKit: PressKitConfig = {
         caption: "Afro-Amapiano from Paris",
       },
       ctas: [
-        { label: "Book Paul-Keranne", href: "#contact", variant: "primary" },
+        { label: "Contacter Paul-Keranne", href: "#contact", variant: "primary" },
         { label: "Voir vidéos", href: "#videos", variant: "secondary" },
       ],
       stats: [
@@ -125,7 +125,7 @@ const paulKerannePressKit: PressKitConfig = {
         caption: "Afro-Amapiano from Paris",
       },
       ctas: [
-        { label: "Book Paul-Keranne", href: "#contact", variant: "primary" },
+        { label: "Contacter Paul-Keranne", href: "#contact", variant: "primary" },
         { label: "Voir vidéos", href: "#videos", variant: "secondary" },
       ],
       stats: [
@@ -148,7 +148,7 @@ const paulKerannePressKit: PressKitConfig = {
       "Depuis 2016, il affine un univers Afro-Amapiano ouvert sur le monde, entre culture club, production et événements à forte identité.",
     tags: ["Afrobeat", "Amapiano", "Dancehall", "Club", "Paris", "Jungle Beatz"],
     paragraphs: [
-      "Depuis 2016, Paul-Keranne fait vibrer la scène parisienne grâce à une présence scénique maîtrisée et une identité musicale résolument moderne. Passionné par la culture club, il commence dans les bars intimistes de la capitale, où il affine rapidement son style et son sens du public.",
+      "Depuis 2016, Paul-Keranne construit sa place sur la scène parisienne avec une présence scénique solide et une identité musicale moderne. Il commence dans les bars intimistes de la capitale, où il affine son style au contact direct du public.",
       "Toujours en quête de nouvelles collaborations, il partage en 2018 les platines avec Djibril Cissé lors d'événements marquants qui renforcent sa visibilité dans l'industrie. Sa recherche artistique l'amène progressivement vers les rythmes de la Côte d'Ivoire et les sonorités africaines contemporaines.",
       "En 2020, il dévoile son premier EP UNIVERS, un projet immersif mêlant afrobeat, amapiano et dancehall, confirmant sa capacité à produire une musique authentique, rythmée et ouverte sur le monde.",
       "Aujourd'hui, Paul-Keranne s'impose comme un DJ-producteur prolifique, enchaînant sorties, remixes et collaborations avec des artistes émergents du continent africain.",
@@ -203,28 +203,28 @@ const paulKerannePressKit: PressKitConfig = {
       {
         id: "paul-keranne-video-1",
         title: "Extrait live 01",
-        description: "",
+        description: "Un extrait live autour de la montée du public et de la couleur afro du set.",
         src: "/paul-keranne/videos/videos-pk1-web.m4v",
         poster: "/paul-keranne/videos/videos-pk1.mp4.png",
       },
       {
         id: "paul-keranne-video-2",
         title: "Extrait live 02",
-        description: "",
+        description: "Moment club capté au plus près de la piste.",
         src: "/paul-keranne/videos/videos-pk2-web.m4v",
         poster: "/paul-keranne/videos/videos-pk2.mp4.png",
       },
       {
         id: "paul-keranne-video-3",
         title: "Extrait live 03",
-        description: "",
+        description: "Séquence courte entre amapiano, dancehall et énergie de salle.",
         src: "/paul-keranne/videos/videos-pk3-web.m4v",
         poster: "/paul-keranne/videos/videos-pk3.mp4.png",
       },
       {
         id: "paul-keranne-video-4",
         title: "Extrait live 04",
-        description: "",
+        description: "Un aperçu direct de l'ambiance Paul-Keranne en live.",
         src: "/paul-keranne/videos/videos-pk4-web.m4v",
         poster: "/paul-keranne/videos/videos-pk4.mp4.png",
       },
@@ -244,7 +244,7 @@ const paulKerannePressKit: PressKitConfig = {
       {
         id: "paul-keranne-youtube-1",
         title: "Culture club",
-        description: "Un format long pour sentir la progression, les transitions et la manière dont Paul-Keranne installe son énergie.",
+        description: "Un format long pour suivre la progression du set, les transitions et l'installation de l'ambiance.",
         source: "youtube",
         embedUrl: "https://www.youtube.com/embed/Suazp7b1wTo?start=577",
       },
@@ -308,7 +308,7 @@ const paulKerannePressKit: PressKitConfig = {
     intro:
       "Paul-Keranne porte une image musicale forte, à la croisée de la nightlife parisienne, des cultures afro contemporaines et des contenus digitaux.",
     supportingText:
-      "Son univers peut accompagner clubs, festivals, activations culturelles et projets de marque qui cherchent une énergie authentique et fédératrice.",
+      "Son univers s'adapte aux clubs, festivals, activations culturelles et projets de marque qui veulent une couleur afro actuelle et un vrai lien avec le public.",
     categories: ["Nightlife", "Afro culture", "Amapiano", "Digital"],
     itemLabel: "Univers compatibles",
     items: [],
@@ -458,6 +458,7 @@ export const paulKeranneClient: ClientConfig = {
       "dossier de presse DJ",
     ],
     ogImage: "/opengraph-image",
+    canonical: "https://paul-keranne.presskit.fr/",
   },
   defaultTheme: "orange",
   defaultVariant: "impact",

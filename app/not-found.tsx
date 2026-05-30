@@ -10,8 +10,8 @@ export default function NotFound() {
         </h1>
         <p className="mt-6 max-w-2xl text-sm leading-7 text-white/65 md:text-lg">
           Aucun client ne correspond au domaine ou au slug demandé. Vérifie le
-          domaine custom configuré sur Vercel, ou utilise `?client=djslyd` ou
-          `?client=yoruboy-dj` en local pour charger un client connu.
+          domaine custom configuré sur Vercel, ou utilise le switcher local
+          pour charger un client connu.
         </p>
       </div>
     </main>

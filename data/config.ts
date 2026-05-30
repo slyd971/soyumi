@@ -145,6 +145,7 @@ export type PressKitConfig = {
     eyebrow: string;
     title: string;
     description: string;
+    itemIconOverrides?: Record<string, { src: string; alt: string }>;
     regions: Array<{
       title: string;
       icon: "map-pin" | "globe";

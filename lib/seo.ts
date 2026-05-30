@@ -1,4 +1,5 @@
 import type { Metadata, MetadataRoute } from "next";
+import { getClientBySlug } from "@/data/clients";
 import type { ClientConfig } from "@/data/clients/types";
 import { getCanonicalUrl, getPrimaryHostname } from "@/lib/domains";
 
@@ -12,6 +13,32 @@ function getInstagramHandle(instagramUrl?: string) {
     ?.replace(/^@/, "");
 
   return handle ? `@${handle}` : undefined;
+}
+
+function getLanguageAlternates(client: ClientConfig) {
+  const switches = client.languageSwitch?.filter((item) => item.label && item.href);
+
+  if (!switches?.length) return undefined;
+
+  const languages = Object.fromEntries(
+    switches.map((item) => {
+      const localizedClient = getClientBySlug(item.clientSlug) ?? client;
+      const locale = item.label.toLowerCase();
+
+      return [locale, new URL(item.href, getCanonicalUrl(localizedClient)).toString()];
+    })
+  );
+
+  const defaultSwitch =
+    switches.find((item) => item.active) ?? switches.find((item) => item.label.toLowerCase() === "fr");
+  const defaultClient = getClientBySlug(defaultSwitch?.clientSlug) ?? client;
+
+  return {
+    ...languages,
+    "x-default": defaultSwitch
+      ? new URL(defaultSwitch.href, getCanonicalUrl(defaultClient)).toString()
+      : getCanonicalUrl(client),
+  };
 }
 
 export function buildClientMetadata(
@@ -33,6 +60,7 @@ export function buildClientMetadata(
     overrides?.imageAlt ?? `Aperçu du dossier de presse de ${client.name}`;
   const canonicalUrl = getCanonicalUrl(client, path);
   const imageUrl = new URL(image, canonicalUrl).toString();
+  const languageAlternates = getLanguageAlternates(client);
 
   return {
     metadataBase: new URL(`https://${getPrimaryHostname(client)}`),
@@ -46,6 +74,7 @@ export function buildClientMetadata(
     category: client.category,
     alternates: {
       canonical: canonicalUrl,
+      ...(languageAlternates ? { languages: languageAlternates } : {}),
     },
     robots: {
       index: true,

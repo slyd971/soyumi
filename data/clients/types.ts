@@ -32,6 +32,7 @@ export type ClientSeoConfig = {
   description: string;
   keywords: string[];
   ogImage: string;
+  canonical?: string;
 };
 
 export type ClientConfig = {
@@ -57,6 +58,7 @@ export type ClientConfig = {
   defaultTheme: TemplateId;
   defaultVariant: TemplateVariantId;
   pressKit: PressKitConfig;
+  hideFromSwitcher?: boolean;
   languageSwitch?: {
     label: string;
     href: string;
