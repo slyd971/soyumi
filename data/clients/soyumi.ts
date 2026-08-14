@@ -311,20 +311,6 @@ const soyumiPressKit: PressKitConfig = {
     homepageCtaLabel: "Open gallery",
     images: [
       {
-        src: "/soyumi/gallery/gallery-soyumi-10.jpeg",
-        alt: "Soyumi press portrait",
-        position: "center 34%",
-        hideFromPreview: true,
-      },
-      {
-        src: "/soyumi/gallery/gallery-soyumi-11.jpeg",
-        alt: "Soyumi live portrait",
-        size: "md:col-span-2",
-        position: "center 32%",
-        previewScale: 1.02,
-        hideFromPreview: true,
-      },
-      {
         src: "/soyumi/gallery/gallery-soyumi-1.jpeg",
         alt: "Soyumi behind the decks",
         size: "md:col-span-2",
@@ -340,6 +326,18 @@ const soyumiPressKit: PressKitConfig = {
         src: "/soyumi/gallery/gallery-soyumi-3.jpeg",
         alt: "Soyumi live",
         position: "center 32%",
+      },
+      {
+        src: "/soyumi/gallery/gallery-soyumi-10.jpeg",
+        alt: "Soyumi press portrait",
+        position: "center 34%",
+      },
+      {
+        src: "/soyumi/gallery/gallery-soyumi-11.jpeg",
+        alt: "Soyumi live portrait",
+        size: "md:col-span-2",
+        position: "center 32%",
+        previewScale: 1.02,
       },
       {
         src: "/soyumi/gallery/gallery-soyumi-4.jpeg",
