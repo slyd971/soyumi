@@ -314,6 +314,7 @@ const soyumiPressKit: PressKitConfig = {
         src: "/soyumi/gallery/gallery-soyumi-10.jpeg",
         alt: "Soyumi press portrait",
         position: "center 34%",
+        hideFromPreview: true,
       },
       {
         src: "/soyumi/gallery/gallery-soyumi-11.jpeg",
@@ -321,6 +322,7 @@ const soyumiPressKit: PressKitConfig = {
         size: "md:col-span-2",
         position: "center 32%",
         previewScale: 1.02,
+        hideFromPreview: true,
       },
       {
         src: "/soyumi/gallery/gallery-soyumi-1.jpeg",
