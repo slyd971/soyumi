@@ -96,6 +96,8 @@ export type PressKitConfig = {
     logo: {
       src: string;
       alt: string;
+      scale?: number;
+      invert?: boolean;
     };
   };
   navigation: {

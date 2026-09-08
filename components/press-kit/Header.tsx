@@ -26,13 +26,6 @@ export function Header({ artist, navigation, ui, homeHref = "/" }: HeaderProps) 
     stageLabelParts.slice(2).join(" • "),
   ].filter(Boolean);
   const hasLogoImage = artist.logo.src.trim().length > 0;
-  const fallbackLogoParts = artist.name
-    .replace(/-/g, " ")
-    .split(/\s+/)
-    .map((part) => part.trim())
-    .filter(Boolean);
-  const fallbackLogoPrimary = fallbackLogoParts[0] ?? artist.name;
-  const fallbackLogoSecondary = fallbackLogoParts.slice(1).join(" ");
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;
@@ -92,8 +85,8 @@ export function Header({ artist, navigation, ui, homeHref = "/" }: HeaderProps) 
       }`}
     >
       <div
-        className={`mx-auto flex max-w-[1720px] items-center justify-between px-4 transition-all duration-300 md:px-10 ${
-          isHeaderCompact ? "h-[58px] md:h-[68px]" : "h-[68px] md:h-[80px]"
+        className={`mx-auto flex max-w-[1720px] items-center justify-between px-3 transition-all duration-300 sm:px-4 md:px-10 ${
+          isHeaderCompact ? "h-[58px] md:h-[68px]" : "h-[58px] md:h-[80px]"
         }`}
       >
         <div className="flex min-w-0 items-center gap-2 md:gap-3">
@@ -102,38 +95,30 @@ export function Header({ artist, navigation, ui, homeHref = "/" }: HeaderProps) 
               className={`flex items-center overflow-hidden transition-all duration-300 ${
                 isHeaderCompact
                   ? "h-8 w-[128px] md:h-9 md:w-[152px]"
-                  : "h-10 w-[146px] md:h-11 md:w-[172px]"
+                  : "h-8 w-[128px] md:h-11 md:w-[172px]"
               }`}
             >
               {hasLogoImage ? (
                 <img
                   src={artist.logo.src}
                   alt={artist.logo.alt}
-                  className="h-[175%] w-auto max-w-none shrink-0 object-contain object-left md:h-[185%]"
+                  className="w-auto max-w-none shrink-0 object-contain object-left"
+                  style={{
+                    height: `${artist.logo.scale ?? 175}%`,
+                    filter: artist.logo.invert ? "invert(1)" : undefined,
+                  }}
                 />
               ) : (
-                <div className="flex flex-col leading-none text-white">
+                <div className="flex min-w-0 items-center leading-none text-white">
                   <span
-                    className={`font-black uppercase tracking-[0.18em] ${
+                    className={`truncate font-black uppercase tracking-[0.08em] ${
                       isHeaderCompact
-                        ? "text-[1.2rem] md:text-[1.3rem]"
-                        : "text-[1.35rem] md:text-[1.5rem]"
+                        ? "text-[0.94rem] md:text-[1.05rem]"
+                        : "text-[1rem] md:text-[1.12rem]"
                     }`}
-                    style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
                   >
-                    {fallbackLogoPrimary}
+                    {artist.name}
                   </span>
-                  {fallbackLogoSecondary ? (
-                    <span
-                      className={`-mt-0.5 font-black uppercase tracking-[0.32em] text-[var(--pk-accent)] ${
-                        isHeaderCompact
-                          ? "text-[0.58rem] md:text-[0.62rem]"
-                          : "text-[0.62rem] md:text-[0.68rem]"
-                      }`}
-                    >
-                      {fallbackLogoSecondary}
-                    </span>
-                  ) : null}
                 </div>
               )}
             </div>
@@ -148,7 +133,7 @@ export function Header({ artist, navigation, ui, homeHref = "/" }: HeaderProps) 
           </div>
         </div>
 
-        <div className="flex items-center gap-3 md:gap-6 xl:gap-8">
+        <div className="flex items-center gap-2 md:gap-6 xl:gap-8">
           <nav className="hidden items-center gap-7 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/76 lg:flex xl:gap-8">
             {navigation.items.map((item) => (
               <a key={item.href} href={item.href} className="transition hover:text-white">
@@ -159,10 +144,11 @@ export function Header({ artist, navigation, ui, homeHref = "/" }: HeaderProps) 
 
           <a
             href={navigation.cta.href}
+            aria-label={`${navigation.cta.label} (menu compact)`}
             className={`inline-flex rounded-full bg-[var(--pk-accent)] font-semibold uppercase text-white transition-all duration-300 hover:bg-[var(--pk-accent-strong)] lg:hidden ${
               isHeaderCompact
-                ? "px-3 py-2 text-[9px] tracking-[0.16em]"
-                : "px-3 py-2.5 text-[10px] tracking-[0.2em] sm:px-4"
+                ? "px-2.5 py-2 text-[9px] tracking-[0.08em]"
+                : "px-2.5 py-2 text-[9px] tracking-[0.08em] sm:px-4 sm:py-2.5 sm:text-[10px] sm:tracking-[0.2em]"
             }`}
           >
             {navigation.cta.label}
@@ -182,7 +168,7 @@ export function Header({ artist, navigation, ui, homeHref = "/" }: HeaderProps) 
           <button
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10 lg:hidden"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10 md:h-10 md:w-10 lg:hidden"
             aria-label={menuOpen ? ui.closeMenuLabel : ui.openMenuLabel}
           >
             {menuOpen ? (
