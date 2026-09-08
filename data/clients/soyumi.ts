@@ -435,6 +435,7 @@ export const soyumiClient: ClientConfig = {
     ],
     ogImage: "/opengraph-image",
     canonical: "https://soyumi.presskit.fr/",
+    favicon: "/soyumi/favicon/favicon.ico",
   },
   defaultTheme: "labringue",
   defaultVariant: "impact",
