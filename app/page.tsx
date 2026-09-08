@@ -107,6 +107,10 @@ export default async function Home({ params, searchParams }: HomeProps) {
   const variant = getTemplateVariant(
     resolvedSearchParams?.variant ?? pressKitEntry.defaultVariant
   );
+  // Sur mobile, Soyumi utilise le hero "showcase" (photo plein cadre,
+  // texte par-dessus), comme DJ SLY'D et DJ Pirate.
+  const mobileHeroVariant =
+    client.slug === "soyumi" ? "showcase" : undefined;
   const fontPreset = getFontPreset(resolvedSearchParams?.font);
   const showLocalSwitchers = await isLocalRequest();
   const navigation = getResolvedNavigation(pressKitConfig);
@@ -138,7 +142,9 @@ export default async function Home({ params, searchParams }: HomeProps) {
       <HeroSection
         heroVariants={pressKitConfig.heroVariants}
         heroSocials={pressKitConfig.heroSocials}
+        socialsPosition={pressKitConfig.heroSocialsPosition}
         variant={variant.id}
+        mobileVariant={mobileHeroVariant}
       />
       <AboutSection about={pressKitConfig.about} />
       <ClubsSection clubs={pressKitConfig.clubs} />
