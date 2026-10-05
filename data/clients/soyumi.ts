@@ -123,6 +123,7 @@ const soyumiPressKit: PressKitConfig = {
         badge: "Soyumi",
         caption: "From lounge to peak-time club",
         position: "center 30%",
+        className: "origin-bottom scale-[1.15] md:scale-100",
       },
       ctas: [
         { label: "Book Soyumi", href: "#contact", variant: "primary" },

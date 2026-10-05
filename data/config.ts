@@ -127,6 +127,8 @@ export type PressKitConfig = {
         badge: string;
         caption: string;
         position?: string;
+        /** Optionnel : classes Tailwind ajoutées à la photo du hero showcase (ex. zoom ancré en bas pour remonter le sujet). */
+        className?: string;
       };
       ctas: CtaLink[];
       stats: StatItem[];

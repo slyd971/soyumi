@@ -373,7 +373,7 @@ function HeroVariantBody({
             <img
               src={hero.image.src}
               alt={hero.image.alt}
-              className="h-full w-full object-cover"
+              className={`h-full w-full object-cover ${hero.image.className ?? ""}`}
               style={{ height: "100%", objectPosition: hero.image.position ?? "center" }}
             />
           ) : (
