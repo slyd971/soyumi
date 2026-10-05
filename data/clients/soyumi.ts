@@ -63,6 +63,7 @@ const soyumiPressKit: PressKitConfig = {
       description:
         "Soyumi delivers Afro-Caribbean and open-format sets with global influences, driven by an instinctive energy that turns every dancefloor into a powerful, unforgettable moment.",
       layout: "impact",
+      heroClassName: "pt-6 md:pt-10 lg:pt-16",
       image: {
         src: "/soyumi/hero/hero-soyumi.jpeg",
         alt: "Portrait of Soyumi",
@@ -115,6 +116,7 @@ const soyumiPressKit: PressKitConfig = {
       description:
         "Soyumi delivers Afro-Caribbean and open-format sets with global influences, driven by an instinctive energy that turns every dancefloor into a powerful, unforgettable moment.",
       layout: "showcase",
+      contentClassName: "pt-[44vh]!",
       image: {
         src: "/soyumi/hero/hero-soyumi-mobile.jpg",
         alt: "Main Soyumi visual",

@@ -113,6 +113,10 @@ export type PressKitConfig = {
     {
       eyebrow: string;
       title: string;
+      /** Optionnel : classes Tailwind ajoutées au bloc texte du hero (ex. padding-top pour descendre titre et sous-titre). */
+      contentClassName?: string;
+      /** Optionnel : classes Tailwind ajoutées au bloc hero complet (titre + visuel + stats), ex. padding-top pour tout descendre. */
+      heroClassName?: string;
       accent: string;
       genreLine?: string;
       description: string;

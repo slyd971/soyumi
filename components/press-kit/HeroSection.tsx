@@ -391,7 +391,7 @@ function HeroVariantBody({
             compactMobile ? "items-center justify-end pb-12 text-center md:items-stretch md:justify-start md:pb-10 md:text-left" : ""
           }`}
         >
-          <div className={`w-full max-w-3xl ${compactMobile ? "flex flex-1 flex-col items-center pt-[30vh] md:block md:flex-none md:pt-0" : ""}`}>
+          <div className={`w-full max-w-3xl ${hero.contentClassName ?? ""} ${compactMobile ? "flex flex-1 flex-col items-center pt-[30vh] md:block md:flex-none md:pt-0" : ""}`}>
             {hasEyebrow && !compactMobile && (
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-white/75 backdrop-blur-md md:px-4 md:py-2 md:text-[11px] md:tracking-[0.28em]">
                 <Disc3 className="h-3 w-3 text-[var(--pk-accent)] md:h-3.5 md:w-3.5" />
@@ -474,7 +474,7 @@ function HeroVariantBody({
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--pk-bg)]/15 via-transparent to-[var(--pk-bg)]" />
 
       <motion.div
-        className="relative mx-auto max-w-7xl px-4 pb-8 md:px-6 md:pb-12"
+        className={`relative mx-auto max-w-7xl px-4 pb-8 md:px-6 md:pb-12 ${hero.heroClassName ?? ""}`}
         variants={heroContainerReveal}
         initial={false}
         animate="visible"
