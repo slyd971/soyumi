@@ -175,7 +175,7 @@ export function VideoSection({ videos, maxItems }: VideoSectionProps) {
                 key={video.id}
                 className="group flex w-[78%] max-w-[22rem] shrink-0 snap-start flex-col only:mx-auto only:w-full md:mx-auto md:h-full md:w-full overflow-hidden rounded-[1.3rem] border border-white/10 bg-white/[0.03] shadow-xl shadow-black/20 backdrop-blur-sm transition hover:border-[rgb(var(--pk-accent-rgb)/0.4)] hover:shadow-[0_0_30px_rgb(var(--pk-accent-rgb)/0.14)] md:max-w-none md:rounded-[1.7rem]"
               >
-                <div className={`relative ${aspectClass} bg-black`}>
+                <div className={`relative ${aspectClass} w-full flex-1 overflow-hidden bg-black`}>
                   {video.source === "youtube" ? (
                     <>
                       <iframe
@@ -205,7 +205,7 @@ export function VideoSection({ videos, maxItems }: VideoSectionProps) {
                         ref={(element) => {
                           videoRefs.current[video.id] = element;
                         }}
-                        className={`pointer-events-none h-full w-full object-cover ${
+                        className={`pointer-events-none absolute inset-0 h-full w-full object-cover ${
                           activeVideoId === video.id || !hasPoster
                             ? "opacity-100"
                             : "opacity-0"
