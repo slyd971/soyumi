@@ -191,6 +191,9 @@ const soyumiPressKit: PressKitConfig = {
           "🇫🇷 Libertalia, Paris",
           "🇫🇷 Nanie, Paris",
           "🇫🇷 Barbanegra, Paris",
+          "🇫🇷 Kong, Paris",
+          "🇫🇷 Buddha Bar, Paris",
+          "🇫🇷 La Bringue, Paris",
         ],
       },
       {
@@ -380,6 +383,18 @@ const soyumiPressKit: PressKitConfig = {
         src: "/soyumi/gallery/gallery-soyumi-14.jpeg",
         alt: "Soyumi in London",
         position: "center 22%",
+      },
+      {
+        src: "/soyumi/gallery/gallery-soyumi-15.jpeg",
+        alt: "Soyumi live set",
+      },
+      {
+        src: "/soyumi/gallery/gallery-soyumi-16.jpeg",
+        alt: "Soyumi behind the decks",
+      },
+      {
+        src: "/soyumi/gallery/gallery-soyumi-17.jpeg",
+        alt: "Soyumi smiling at the mixer, night view",
       },
     ],
   },
