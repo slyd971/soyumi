@@ -201,6 +201,7 @@ const soyumiPressKit: PressKitConfig = {
         icon: "globe",
         items: [
           "🇬🇧 Notting Hill Carnival, London",
+          "🇳🇱 Amsterdam",
           "🇦🇺 Hilton, Sydney",
           "🇦🇺 Argyle, Sydney",
           "🇦🇺 ZeTa Bar, Sydney",
@@ -378,11 +379,6 @@ const soyumiPressKit: PressKitConfig = {
         alt: "Soyumi mixing in an open-air set",
         size: "md:col-span-2",
         position: "center 30%",
-      },
-      {
-        src: "/soyumi/gallery/gallery-soyumi-14.jpeg",
-        alt: "Soyumi in London",
-        position: "center 22%",
       },
       {
         src: "/soyumi/gallery/gallery-soyumi-15.jpeg",
