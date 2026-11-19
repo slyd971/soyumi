@@ -114,15 +114,15 @@ export function AvailabilitySection({
   const dark = tone === "dark";
   const t = dark
     ? {
-        panel: "border-2 border-white/25 text-white",
-        btn: "border-2 border-white/60 hover:bg-white hover:text-black disabled:border-white/15 disabled:text-white/20 disabled:hover:bg-transparent disabled:hover:text-white/20",
-        weekday: "text-white/45",
-        free: "border-white/25 text-white hover:border-white",
-        past: "border-transparent text-white/25",
-        busy: "border-[var(--pk-accent)] bg-[var(--pk-accent)] text-white line-through",
-        legend: "text-white/60",
-        swatchFree: "border-white/40",
-        swatchBusy: "border-[var(--pk-accent)] bg-[var(--pk-accent)]",
+        panel: "border-2 border-white bg-[var(--pk-accent)] text-white",
+        btn: "border-2 border-white hover:bg-white hover:text-[var(--pk-accent)] disabled:border-white/35 disabled:text-white/35 disabled:hover:bg-transparent disabled:hover:text-white/35",
+        weekday: "text-white/80",
+        free: "border-white/70 text-white hover:border-white hover:bg-white/15",
+        past: "border-transparent text-white/40",
+        busy: "border-white bg-white text-[var(--pk-accent)] line-through",
+        legend: "text-white",
+        swatchFree: "border-white/70",
+        swatchBusy: "border-white bg-white",
         contactBtn: "border-2 border-white bg-white text-black",
       }
     : {
@@ -261,7 +261,7 @@ export function AvailabilitySection({
                     >
                       {day}
                       {isToday && (
-                        <span className="absolute bottom-1 left-1/2 h-[3px] w-3 -translate-x-1/2 bg-[var(--pk-accent)]" />
+                        <span className={`absolute bottom-1 left-1/2 h-[3px] w-3 -translate-x-1/2 ${dark ? (isBusy ? "bg-[var(--pk-accent)]" : "bg-white") : "bg-[var(--pk-accent)]"}`} />
                       )}
                     </div>
                   );
