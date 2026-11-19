@@ -114,20 +114,32 @@ export function AvailabilitySection({
   const dark = tone === "dark";
   const t = dark
     ? {
-        panel: "border-2 border-white text-white",
-        btn: "border-2 border-white hover:bg-white hover:text-[var(--pk-accent)] disabled:border-white/35 disabled:text-white/35 disabled:hover:bg-transparent disabled:hover:text-white/35",
-        weekday: "text-white/70",
-        free: "border-white/60 text-white hover:border-white",
-        past: "border-transparent text-white/30",
-        busy: "border-[var(--pk-accent)] bg-[var(--pk-accent)] text-white line-through",
-        legend: "text-white/80",
-        swatchFree: "border-white/60",
-        swatchBusy: "border-[var(--pk-accent)] bg-[var(--pk-accent)]",
-        contactBtn: "border-2 border-white bg-white text-black",
+        panel: "rounded-[1.7rem] border border-white/10 bg-white/[0.03] text-white shadow-xl shadow-black/20 backdrop-blur-sm",
+        btnBase: "h-10 w-10 rounded-full border",
+        btn: "border-white/15 bg-white/[0.08] hover:border-white/25 hover:bg-[var(--pk-accent)] disabled:border-white/10 disabled:bg-transparent disabled:text-white/25 disabled:hover:bg-transparent",
+        header: "",
+        title: "text-xl md:text-3xl",
+        weekday: "text-white/45",
+        cellBase: "rounded-xl border",
+        free: "border-white/10 bg-white/[0.04] text-white hover:border-[var(--pk-accent)]",
+        past: "border-transparent text-white/25",
+        busy: "border-[rgb(var(--pk-accent-rgb)/0.5)] bg-[rgb(var(--pk-accent-rgb)/0.22)] text-white/70 line-through",
+        today: "ring-1 ring-[var(--pk-accent)]",
+        legend: "text-white/60",
+        swatchBase: "rounded-md border",
+        swatchFree: "border-white/15 bg-white/[0.04]",
+        swatchBusy: "border-[rgb(var(--pk-accent-rgb)/0.5)] bg-[rgb(var(--pk-accent-rgb)/0.22)]",
+        contactBtn: "rounded-full border border-white/15 bg-[var(--pk-accent)] text-white",
       }
     : {
         panel: "border-2 border-black text-black",
-        btn: "border-2 border-black hover:bg-black hover:text-white disabled:border-black/20 disabled:text-black/20 disabled:hover:bg-transparent disabled:hover:text-black/20",
+        btnBase: "h-10 w-10 border-2",
+        header: "",
+        title: "text-2xl md:text-4xl",
+        cellBase: "border-2",
+        today: "",
+        swatchBase: "border-2",
+        btn: "border-black hover:bg-black hover:text-white disabled:border-black/20 disabled:text-black/20 disabled:hover:bg-transparent disabled:hover:text-black/20",
         weekday: "text-black/45",
         free: "border-black/25 text-black hover:border-black",
         past: "border-transparent text-black/25",
@@ -198,18 +210,18 @@ export function AvailabilitySection({
               {...(dark ? {} : { "data-pk-grain-light": true })}
               className={`${t.panel} p-4 md:p-8`}
             >
-              <div className={`flex items-center justify-between gap-3 ${dark ? "bg-[var(--pk-accent)] p-3" : ""}`}>
+              <div className="flex items-center justify-between gap-3">
                 <button
                   type="button"
                   aria-label={copy.prev}
                   disabled={offset === 0}
                   onClick={() => setOffset((value) => Math.max(0, value - 1))}
-                  className={`flex h-10 w-10 items-center justify-center transition disabled:cursor-not-allowed ${t.btn}`}
+                  className={`flex items-center justify-center transition disabled:cursor-not-allowed ${t.btnBase} ${t.btn}`}
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
 
-                <div className={`text-center font-bold [font-family:var(--slyd-font-display,var(--pk-font-display)),sans-serif] uppercase leading-none ${dark ? "whitespace-nowrap text-xl md:text-2xl lg:text-3xl" : "text-2xl md:text-4xl"}`}>
+                <div className={`text-center font-bold [font-family:var(--slyd-font-display,var(--pk-font-display)),sans-serif] uppercase leading-none ${t.title}`}>
                   {monthLabel}
                 </div>
 
@@ -218,7 +230,7 @@ export function AvailabilitySection({
                   aria-label={copy.next}
                   disabled={offset === MONTHS_AHEAD}
                   onClick={() => setOffset((value) => Math.min(MONTHS_AHEAD, value + 1))}
-                  className={`flex h-10 w-10 items-center justify-center transition disabled:cursor-not-allowed ${t.btn}`}
+                  className={`flex items-center justify-center transition disabled:cursor-not-allowed ${t.btnBase} ${t.btn}`}
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>
@@ -257,7 +269,7 @@ export function AvailabilitySection({
                       key={key}
                       role="img"
                       aria-label={`${formatLongDate(key, copy.locale)} — ${isBusy ? copy.busy : copy.free}`}
-                      className={`relative flex aspect-square items-center justify-center border-2 text-sm font-bold md:text-lg ${cellTone}`}
+                      className={`relative flex aspect-square items-center justify-center text-sm font-bold md:text-lg ${t.cellBase} ${cellTone} ${isToday ? t.today : ""}`}
                     >
                       {day}
                       {isToday && (
@@ -270,11 +282,11 @@ export function AvailabilitySection({
 
               <div className={`mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.2em] md:text-xs ${t.legend}`}>
                 <span className="flex items-center gap-2">
-                  <span className={`h-3 w-3 border-2 ${t.swatchFree}`} />
+                  <span className={`h-3 w-3 ${t.swatchBase} ${t.swatchFree}`} />
                   {copy.free}
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className={`h-3 w-3 border-2 ${t.swatchBusy}`} />
+                  <span className={`h-3 w-3 ${t.swatchBase} ${t.swatchBusy}`} />
                   {copy.busy}
                 </span>
               </div>
