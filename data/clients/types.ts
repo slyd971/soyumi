@@ -60,6 +60,8 @@ export type ClientConfig = {
   defaultVariant: TemplateVariantId;
   pressKit: PressKitConfig;
   hideFromSwitcher?: boolean;
+  /** Site language, used for share metadata (og:locale, image alt). Defaults to French. */
+  language?: "fr" | "en";
   languageSwitch?: {
     label: string;
     href: string;

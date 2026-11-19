@@ -57,7 +57,10 @@ export function buildClientMetadata(
   const image = overrides?.image ?? client.seo.ogImage;
   const keywords = overrides?.keywords ?? client.seo.keywords;
   const imageAlt =
-    overrides?.imageAlt ?? `Aperçu du dossier de presse de ${client.name}`;
+    overrides?.imageAlt ??
+    (client.language === "en"
+      ? `Press kit preview of ${client.name}`
+      : `Aperçu du dossier de presse de ${client.name}`);
   const canonicalUrl = getCanonicalUrl(client, path);
   const imageUrl = new URL(image, canonicalUrl).toString();
   const languageAlternates = getLanguageAlternates(client);
@@ -118,7 +121,7 @@ export function buildClientMetadata(
       description,
       url: canonicalUrl,
       siteName: client.name,
-      locale: "fr_FR",
+      locale: client.language === "en" ? "en_US" : "fr_FR",
       type: "website",
       images: [
         {

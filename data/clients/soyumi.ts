@@ -408,6 +408,7 @@ const soyumiPressKit: PressKitConfig = {
 
 export const soyumiClient: ClientConfig = {
   slug: "soyumi",
+  language: "en",
   domain: "soyumi.presskit.fr",
   vercelSubdomain: "soyumi.vercel.app",
   name: "Soyumi",
