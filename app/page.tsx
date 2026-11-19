@@ -197,6 +197,7 @@ export default async function Home({ params, searchParams }: HomeProps) {
           today={new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Paris" }).format(new Date())}
           bookingHref={availabilityBookingHref}
           language="en"
+          tone="dark"
           demo={availability.source === "demo"}
           unavailable={availability.source === "error"}
         />

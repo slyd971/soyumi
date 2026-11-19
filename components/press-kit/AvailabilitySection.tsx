@@ -15,6 +15,8 @@ type AvailabilitySectionProps = {
   unavailable?: boolean;
   /** Local design preview with fake dates. */
   demo?: boolean;
+  /** "dark" = light-on-dark calendar for dark themes (default keeps the paper look). */
+  tone?: "paper" | "dark";
 };
 
 const COPY = {
@@ -23,6 +25,8 @@ const COPY = {
     title: "Disponibilités",
     description:
       "Les dates en noir sont déjà prises. Pour toute autre date, contacte-moi directement.",
+    descriptionDark:
+      "Les dates barrées sont déjà prises. Pour toute autre date, contacte-moi directement.",
     free: "Libre",
     busy: "Indisponible",
     unavailable:
@@ -39,6 +43,8 @@ const COPY = {
     title: "Availability",
     description:
       "Dates in black are already taken. For any other date, get in touch directly.",
+    descriptionDark:
+      "Struck-through dates are already taken. For any other date, get in touch directly.",
     free: "Free",
     busy: "Unavailable",
     unavailable:
@@ -102,8 +108,36 @@ export function AvailabilitySection({
   language = "fr",
   unavailable = false,
   demo = false,
+  tone = "paper",
 }: AvailabilitySectionProps) {
   const copy = COPY[language];
+  const dark = tone === "dark";
+  const t = dark
+    ? {
+        panel: "border-2 border-white/25 text-white",
+        btn: "border-2 border-white/60 hover:bg-white hover:text-black disabled:border-white/15 disabled:text-white/20 disabled:hover:bg-transparent disabled:hover:text-white/20",
+        weekday: "text-white/45",
+        free: "border-white/25 text-white hover:border-white",
+        past: "border-transparent text-white/25",
+        busy: "border-[var(--pk-accent)] bg-[var(--pk-accent)] text-white line-through",
+        legend: "text-white/60",
+        swatchFree: "border-white/40",
+        swatchBusy: "border-[var(--pk-accent)] bg-[var(--pk-accent)]",
+        contactBtn: "border-2 border-white bg-white text-black",
+      }
+    : {
+        panel: "border-2 border-black text-black",
+        btn: "border-2 border-black hover:bg-black hover:text-white disabled:border-black/20 disabled:text-black/20 disabled:hover:bg-transparent disabled:hover:text-black/20",
+        weekday: "text-black/45",
+        free: "border-black/25 text-black hover:border-black",
+        past: "border-transparent text-black/25",
+        busy: "border-black bg-black text-white/55 line-through",
+        legend: "text-black/60",
+        swatchFree: "border-black/40",
+        swatchBusy: "border-black bg-black",
+        contactBtn: "border-2 border-black bg-black text-white",
+      };
+
   const busy = useMemo(() => new Set(busyDates), [busyDates]);
   const todayParts = parseKey(today);
   const startIndex = todayParts.year * 12 + todayParts.monthIndex;
@@ -134,7 +168,7 @@ export function AvailabilitySection({
               {copy.title}
             </h2>
             <p className="mt-5 max-w-xl text-sm leading-6 text-white/65 md:mt-8 md:text-lg md:leading-8">
-              {copy.description}
+              {dark ? copy.descriptionDark : copy.description}
             </p>
             {demo && (
               <p className="mt-6 inline-block border border-white/25 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">
@@ -145,15 +179,15 @@ export function AvailabilitySection({
 
           {unavailable ? (
             <div
-              data-pk-grain-light
-              className="border-2 border-black p-6 text-black md:p-8"
+              {...(dark ? {} : { "data-pk-grain-light": true })}
+              className={`${t.panel} p-6 md:p-8`}
             >
               <p className="text-sm leading-6 md:text-base md:leading-7">
                 {copy.unavailable}
               </p>
               <a
                 href={bookingHref}
-                className="mt-5 inline-flex items-center gap-2 border-2 border-black bg-black px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5"
+                className={`mt-5 inline-flex items-center gap-2 ${t.contactBtn} px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] transition hover:-translate-y-0.5`}
               >
                 {copy.contact}
                 <ArrowUpRight className="h-4 w-4" />
@@ -161,8 +195,8 @@ export function AvailabilitySection({
             </div>
           ) : (
             <div
-              data-pk-grain-light
-              className="border-2 border-black p-4 text-black md:p-8"
+              {...(dark ? {} : { "data-pk-grain-light": true })}
+              className={`${t.panel} p-4 md:p-8`}
             >
               <div className="flex items-center justify-between gap-3">
                 <button
@@ -170,7 +204,7 @@ export function AvailabilitySection({
                   aria-label={copy.prev}
                   disabled={offset === 0}
                   onClick={() => setOffset((value) => Math.max(0, value - 1))}
-                  className="flex h-10 w-10 items-center justify-center border-2 border-black transition hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:border-black/20 disabled:text-black/20 disabled:hover:bg-transparent disabled:hover:text-black/20"
+                  className={`flex h-10 w-10 items-center justify-center transition disabled:cursor-not-allowed ${t.btn}`}
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
@@ -184,7 +218,7 @@ export function AvailabilitySection({
                   aria-label={copy.next}
                   disabled={offset === MONTHS_AHEAD}
                   onClick={() => setOffset((value) => Math.min(MONTHS_AHEAD, value + 1))}
-                  className="flex h-10 w-10 items-center justify-center border-2 border-black transition hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:border-black/20 disabled:text-black/20 disabled:hover:bg-transparent disabled:hover:text-black/20"
+                  className={`flex h-10 w-10 items-center justify-center transition disabled:cursor-not-allowed ${t.btn}`}
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>
@@ -194,7 +228,7 @@ export function AvailabilitySection({
                 {copy.weekdays.map((weekday, index) => (
                   <div
                     key={`${weekday}-${index}`}
-                    className="pb-1 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-black/45 md:text-xs"
+                    className={`pb-1 text-center text-[10px] font-semibold uppercase tracking-[0.2em] md:text-xs ${t.weekday}`}
                   >
                     {weekday}
                   </div>
@@ -210,12 +244,12 @@ export function AvailabilitySection({
                   const isBusy = busy.has(key);
                   const isToday = key === today;
 
-                  let tone = "border-black/25 text-black hover:border-black";
+                  let cellTone = t.free;
 
                   if (isPast) {
-                    tone = "border-transparent text-black/25";
+                    cellTone = t.past;
                   } else if (isBusy) {
-                    tone = "border-black bg-black text-white/55 line-through";
+                    cellTone = t.busy;
                   }
 
                   return (
@@ -223,7 +257,7 @@ export function AvailabilitySection({
                       key={key}
                       role="img"
                       aria-label={`${formatLongDate(key, copy.locale)} — ${isBusy ? copy.busy : copy.free}`}
-                      className={`relative flex aspect-square items-center justify-center border-2 text-sm font-bold md:text-lg ${tone}`}
+                      className={`relative flex aspect-square items-center justify-center border-2 text-sm font-bold md:text-lg ${cellTone}`}
                     >
                       {day}
                       {isToday && (
@@ -234,13 +268,13 @@ export function AvailabilitySection({
                 })}
               </div>
 
-              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-black/60 md:text-xs">
+              <div className={`mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.2em] md:text-xs ${t.legend}`}>
                 <span className="flex items-center gap-2">
-                  <span className="h-3 w-3 border-2 border-black/40" />
+                  <span className={`h-3 w-3 border-2 ${t.swatchFree}`} />
                   {copy.free}
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="h-3 w-3 border-2 border-black bg-black" />
+                  <span className={`h-3 w-3 border-2 ${t.swatchBusy}`} />
                   {copy.busy}
                 </span>
               </div>
