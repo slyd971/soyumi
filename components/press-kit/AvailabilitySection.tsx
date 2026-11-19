@@ -114,15 +114,15 @@ export function AvailabilitySection({
   const dark = tone === "dark";
   const t = dark
     ? {
-        panel: "border-2 border-white bg-[var(--pk-accent)] text-white",
+        panel: "border-2 border-white text-white",
         btn: "border-2 border-white hover:bg-white hover:text-[var(--pk-accent)] disabled:border-white/35 disabled:text-white/35 disabled:hover:bg-transparent disabled:hover:text-white/35",
-        weekday: "text-white/80",
-        free: "border-white/70 text-white hover:border-white hover:bg-white/15",
-        past: "border-transparent text-white/40",
-        busy: "border-white bg-white text-[var(--pk-accent)] line-through",
-        legend: "text-white",
-        swatchFree: "border-white/70",
-        swatchBusy: "border-white bg-white",
+        weekday: "text-white/70",
+        free: "border-white/60 text-white hover:border-white",
+        past: "border-transparent text-white/30",
+        busy: "border-[var(--pk-accent)] bg-[var(--pk-accent)] text-white line-through",
+        legend: "text-white/80",
+        swatchFree: "border-white/60",
+        swatchBusy: "border-[var(--pk-accent)] bg-[var(--pk-accent)]",
         contactBtn: "border-2 border-white bg-white text-black",
       }
     : {
@@ -198,7 +198,7 @@ export function AvailabilitySection({
               {...(dark ? {} : { "data-pk-grain-light": true })}
               className={`${t.panel} p-4 md:p-8`}
             >
-              <div className="flex items-center justify-between gap-3">
+              <div className={`flex items-center justify-between gap-3 ${dark ? "bg-[var(--pk-accent)] p-3" : ""}`}>
                 <button
                   type="button"
                   aria-label={copy.prev}
@@ -209,7 +209,7 @@ export function AvailabilitySection({
                   <ChevronLeft className="h-5 w-5" />
                 </button>
 
-                <div className="text-center font-bold [font-family:var(--slyd-font-display,var(--pk-font-display)),sans-serif] text-2xl uppercase leading-none md:text-4xl">
+                <div className={`text-center font-bold [font-family:var(--slyd-font-display,var(--pk-font-display)),sans-serif] uppercase leading-none ${dark ? "whitespace-nowrap text-xl md:text-2xl lg:text-3xl" : "text-2xl md:text-4xl"}`}>
                   {monthLabel}
                 </div>
 
@@ -261,7 +261,7 @@ export function AvailabilitySection({
                     >
                       {day}
                       {isToday && (
-                        <span className={`absolute bottom-1 left-1/2 h-[3px] w-3 -translate-x-1/2 ${dark ? (isBusy ? "bg-[var(--pk-accent)]" : "bg-white") : "bg-[var(--pk-accent)]"}`} />
+                        <span className={`absolute bottom-1 left-1/2 h-[3px] w-3 -translate-x-1/2 bg-[var(--pk-accent)]`} />
                       )}
                     </div>
                   );
