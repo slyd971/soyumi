@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import kitStyles from "@/components/press-kit/kit.module.css";
 import { AboutSection } from "@/components/press-kit/AboutSection";
+import { AvailabilitySection } from "@/components/press-kit/AvailabilitySection";
 import { BrandsSection } from "@/components/press-kit/BrandsSection";
 import { ClubsSection } from "@/components/press-kit/ClubsSection";
 import { ContactSection } from "@/components/press-kit/ContactSection";
@@ -38,6 +39,7 @@ import {
   getRequestedClientSlug,
   getRequiredRequestClient,
 } from "@/lib/clients/server";
+import { getAvailability, isAvailabilityEnabled } from "@/lib/availability";
 import { isLocalRequest } from "@/lib/is-local-request";
 import { buildClientMetadata } from "@/lib/seo";
 
@@ -114,12 +116,25 @@ export default async function Home({ params, searchParams }: HomeProps) {
     client.slug === "soyumi" ? "showcase" : undefined;
   const fontPreset = getFontPreset(resolvedSearchParams?.font);
   const showLocalSwitchers = await isLocalRequest();
-  const navigation = getResolvedNavigation(pressKitConfig);
+  const navigation = getResolvedNavigation(
+    pressKitConfig,
+    isAvailabilityEnabled(client.slug, { allowDemo: showLocalSwitchers })
+      ? ["#disponibilites"]
+      : []
+  );
   const galleryHref = getArtistGalleryHref(pressKitEntry.id);
   const videosHref = getArtistVideosHref(pressKitEntry.id);
   const homeHref =
     client.languageSwitch?.find((item) => item.active)?.href ??
     getArtistHomeHref(pressKitEntry.id);
+
+  const availability = await getAvailability(client.slug, {
+    allowDemo: showLocalSwitchers,
+  });
+  const availabilityBookingHref =
+    pressKitConfig.contact.methods.find((method) =>
+      method.href.startsWith("mailto:")
+    )?.href ?? "#contact";
 
   return (
     <main
@@ -175,6 +190,16 @@ export default async function Home({ params, searchParams }: HomeProps) {
       )}
       {hasRiderContent(pressKitConfig) && pressKitConfig.rider && (
         <RiderSection rider={pressKitConfig.rider} />
+      )}
+      {availability.source !== "none" && (
+        <AvailabilitySection
+          busyDates={availability.busyDates}
+          today={new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Paris" }).format(new Date())}
+          bookingHref={availabilityBookingHref}
+          language="en"
+          demo={availability.source === "demo"}
+          unavailable={availability.source === "error"}
+        />
       )}
       <ContactSection contact={pressKitConfig.contact} />
       <Footer

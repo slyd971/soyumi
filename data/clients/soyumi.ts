@@ -42,6 +42,7 @@ const soyumiPressKit: PressKitConfig = {
       { label: "Gallery", href: "#gallery" },
       { label: "Videos", href: "#videos" },
       { label: "SoundCloud", href: "#sound" },
+      { label: "Availability", href: "#disponibilites" },
     ],
     cta: {
       label: "Book Soyumi",

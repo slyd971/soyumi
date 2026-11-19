@@ -121,12 +121,14 @@ export function hasRiderContent(config: PressKitConfig): boolean {
 }
 
 export function getResolvedNavigation(
-  config: PressKitConfig
+  config: PressKitConfig,
+  extraVisibleHrefs: string[] = []
 ): PressKitConfig["navigation"] {
   const visibleSections = new Set<string>([
     sectionHrefMap.about,
     sectionHrefMap.clubs,
     sectionHrefMap.contact,
+    ...extraVisibleHrefs,
   ]);
 
   if (hasGalleryContent(config)) visibleSections.add(sectionHrefMap.gallery);
