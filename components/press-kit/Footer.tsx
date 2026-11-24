@@ -69,6 +69,7 @@ export function Footer({
   const hasBookingEmail = Boolean(client.bookingEmail);
   const footerLabels = client.pressKit.footer;
   const languageSwitch = client.languageSwitch?.filter((item) => item.href);
+  const isEnglish = client.language === "en";
   const availabilityText =
     footerLabels?.availabilityText ??
     "Disponible pour clubs, festivals, événements privés et formats institutionnels.";
@@ -196,7 +197,7 @@ export function Footer({
             © {new Date().getFullYear()} {client.name} Press Kit
           </div>
           <div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/30">
-            Press kit DJ réalisé par{" "}
+            {isEnglish ? "DJ press kit by" : "Press kit DJ réalisé par"}{" "}
             <a
               href="https://www.presskit.fr/dj"
               target="_blank"
